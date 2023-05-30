@@ -1,0 +1,835 @@
+@font-face {
+  font-family: 'Muller';
+  font-weight: 700;
+  font-style: normal;
+  src:local('Muller'),
+      url('../fonts/MullerBold.woff2') format('woff2'),
+      url('../fonts/MullerBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-weight: 300;
+  font-style: normal;
+  src:local('Muller'),
+      url('../fonts/MullerLight.woff2') format('woff2'),
+      url('../fonts/MullerLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-weight: 400;
+  font-style: normal;
+  src:local('Muller'),
+      url('../fonts/MullerRegular.woff2') format('woff2'),
+      url('../fonts/MullerRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muller';
+  font-weight: 500;
+  font-style: normal;
+  src:local('Muller'),
+      url('../fonts/MullerMedium.woff2') format('woff2'),
+      url('../fonts/MullerMedium.woff') format('woff');
+}
+
+:root {
+  --white: #FFFFFF;
+  --yellow: #F0BF5F;
+  --light-brown: #CC9933;
+  --brown: #A47312;
+  --light-grey: #E9E9E9;
+  --grey: #999999;
+  --black: #000000;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0 auto;
+  padding-top: 30px;
+  font-family: 'Muller', sans-serif;
+  background-color: #F1F1F1;
+}
+
+select:not([multiple]) {
+  padding-right: 1.2em;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.25em) 0.40em;
+  background-size: 0.85em auto;
+  background-image: url('../img/select_vector.svg');
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input {
+  padding: 0;
+}
+
+/* glob */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.button-reset {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 13px 20px;
+  font-size: 16px;
+  outline: 1px solid var(--light-brown);
+  color: var(--light-brown);
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button-reset:focus-visible {
+  background-color: var(--light-brown);
+  color: var(--white);
+}
+
+.button-reset:hover {
+  background-color: var(--light-brown);
+  color: var(--white);
+}
+
+.button-reset:active {
+  background-color: var(--brown);
+  color: var(--white);
+}
+
+.flex {
+  display: flex;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.section {
+  margin-bottom: 70px;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.hyphens {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.address {
+  font-style: normal;
+}
+
+/* header */
+.header {
+  margin-bottom: 70px;
+}
+
+.header__top {
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header__top-left {
+  margin-right: auto;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 40px;
+}
+
+.header__bottom {
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+.nav__list {
+  flex-wrap: wrap;
+  padding: 25px 0 25px 45px;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 45px;
+}
+
+.header__bottom__btn {
+  font-size: 0;
+}
+
+.header__btn {
+  margin-right: 40px;
+}
+
+.header__btn:last-child {
+  margin-right: 45px;
+}
+
+.hotline-link {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #666666;
+}
+
+.header__office-img {
+  margin-right: 7px;
+}
+
+.header__office-link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--light-brown);
+  fill: var(--light-brown);
+  transition: fill 0.3s ease, color 0.3s ease;
+}
+
+.header__office-link:focus-visible {
+  outline: 1px solid var(--light-brown);
+  outline-offset: 5px;
+}
+
+.header__office-link:hover {
+  color: var(--yellow);
+  fill: var(--yellow);
+}
+
+.header__office-link:active {
+  outline: none;
+  color: var(--brown);
+  fill: var(--brown);
+}
+
+.header__link {
+  transition: color 0.3s ease;
+}
+
+.header__link:focus-visible {
+  outline: 1px solid var(--light-brown);
+  outline-offset: 5px;
+  color: var(--light-brown);
+}
+
+.header__link:hover {
+  color: var(--light-brown);
+}
+
+.header__link:active {
+  color: var(--brown);
+  outline: none;
+}
+
+/* main */
+
+/* sector special-offer */
+.offer__container {
+  align-items: stretch;
+}
+
+.offer__card {
+  position: relative;
+  width: 573px;
+  padding: 0 108px 40px 45px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.card-hotel-rooms {
+  padding-top: 212px;
+  min-height: 540px;
+  background-image: url('../img/hotel.jpg');
+}
+
+.card-island {
+  margin-right: 24px;
+  padding-top: 40px;
+  min-height: 258px;
+}
+
+.card-island:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.card-maldiv-island {
+  background-image: linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('../img/maldive.jpg');
+}
+
+.card-crete-island {
+  background-image: linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('../img/creet.jpg');
+}
+
+.card__title {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  padding-right: 108px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  color: var(--white);
+
+}
+.special-offer-price {
+  margin: 0;
+  margin-bottom: 47px;
+}
+
+.card-island-descr {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--white);
+}
+
+.offer__link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--yellow);
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.offer__link:focus-visible::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid var(--light-brown);
+  outline-offset: 8px;
+}
+
+.offer__link:hover .offer__link__img {
+  transform: translateX(11px);
+}
+
+.offer__link:active {
+  outline: none;
+  color: var(--white);
+}
+
+.aside-title {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.card-hotel-rooms-descr {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.offer__link__img {
+  margin-left: 5px;
+  transition: transform 0.5s;
+}
+
+/* info */
+.info__descr {
+  padding-right: 270px;
+}
+
+/* services */
+.services__list {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.services__item{
+  position: relative;
+  width: 573px;
+  min-height: 330px;
+  padding: 191px 126px 35px 45px;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-color: var(--white);
+}
+
+.services__link {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  color: var(--light-brown);
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.services__link:focus-visible::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid var(--light-brown);
+  outline-offset: 8px;
+}
+
+.services__link:hover {
+  color: var(--yellow);
+}
+.services__link:hover .services__link__img {
+  stroke: var(--yellow);
+  transform: translateX(11px);
+}
+
+.services__link:active {
+  outline: none;
+  color: var(--brown);
+}
+
+.services__link:active .services__link__img {
+  stroke: var(--brown);
+}
+
+.services-item-top-left {
+  background-image: url(../img/10.jpg);
+}
+
+.services-item-top-right {
+  background-image: url(../img/15.jpg);
+}
+
+.services-item-bottom-left {
+  background-image: url(../img/12.jpg);
+}
+
+.services-item-bottom-right {
+  background-image: url(../img/16.jpg);
+}
+
+.services__link__img {
+  margin-left: 5px;
+  stroke: var(--light-brown);
+  fill: none;
+  transition: transform 0.5s;
+}
+
+/* advantages */
+.advantages__list {
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.advantages__item {
+  padding: 116px 42px 32px 45px;
+  width: 276px;
+  min-height: 276px;
+  background-color: var(--white);
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: left 45px top 40px;
+}
+
+.advantages__item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.advantages-item-bathroom {
+  background-image: url(../img/bathtub.svg);
+}
+
+.advantages-item-hanger {
+  background-image: url(../img/hanger.svg);
+}
+
+.advantages-item-dryer {
+  background-image: url(../img/heating.svg);
+}
+
+.advantages-item-key {
+  background-image: url(../img/hotel-key.svg);
+}
+
+.advantages-item-parking {
+  background-image: url(../img/parking.svg);
+}
+
+.advantages-item-reception {
+  background-image: url(../img/reception.svg);
+}
+
+.advantages-item-secure {
+  background-image: url(../img/security-box.svg);
+}
+
+.advantages-item-pool {
+  background-image: url(../img/swimming-pool.svg);
+}
+
+/* placement */
+.placement__list {
+  flex-wrap: wrap;
+  gap: 24px 24px;
+  align-items: stretch;
+}
+
+.placement__item {
+  width: 374px;
+  min-height: 440px;
+  font-size: 0;
+  background: var(--white);
+  border-radius: 15px;
+}
+
+.placement__item__card {
+  padding: 32px 45px 45px 45px;
+}
+
+.placement__price-box {
+  justify-content: space-between;
+}
+
+.placement__descr {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.placement__price-per-night {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.placement__item__image {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.placement__item-see-more {
+  position: relative;
+  padding: 27px 54px;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: url(../img/41.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.placement__link {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  color: var(--white);
+}
+
+.placement__link__img {
+  margin-left: 5px;
+  transition: transform 0.5s ease;
+}
+
+.placement__link::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.placement__link:hover .placement__link__img {
+  transform: translateX(11px);
+}
+
+/* tour */
+.tour__container {
+  padding: 45px;
+  border-radius: 15px;
+  background-color: var(--light-grey);
+}
+
+.tour__title {
+  padding: 0;
+}
+.tour__form {
+  margin: 0 auto;
+  min-width: 1080px;
+  height: 106px;
+  padding: 31px 28px;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+.tour__item {
+  margin-right: 41px;
+}
+
+.tour__item:last-child {
+  margin-right: 51px;
+}
+
+.tour__select {
+  border: none;
+}
+
+.tour__input {
+  width: 160px;
+  border: none;
+  border-bottom: 1px solid var(--light-grey);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.tour__form-input {
+  width: 120px;
+}
+
+.tour__btn {
+  padding: 13px 30px;
+}
+
+.tour__descr {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--black);
+}
+
+/* contacts */
+.contacts {
+  margin-bottom: 40px;
+}
+
+.contacts__container {
+  padding: 45px;
+  border-radius: 15px;
+  background-color: var(--white);
+  background-image: url('../img/contacts_img.jpg');
+  background-repeat: no-repeat;
+  background-position: right 45px center;
+}
+
+.contacts__list {
+  flex-direction: column;
+}
+
+.contacts__specification {
+  color: var(--grey);
+}
+
+.contacts__box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 375px;
+  margin-bottom: 25px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.contacts__box__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 229px;
+}
+
+.contacts__subtitle {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.contacts__descr {
+  line-height: 24px;
+}
+
+.contacts__link {
+  line-height: 24px;
+  color: var(--light-brown);
+  transition: color 0.3s ease;
+}
+
+.contacts__link:focus-visible {
+  outline: 1px solid var(--light-brown);
+  outline-offset: 5px;
+  color: var(--light-brown);
+}
+
+.contacts__link:hover {
+  color: var(--yellow);
+}
+
+.contacts__link:active {
+  color: var(--brown);
+  outline: none;
+}
+
+.contacts__btn {
+  padding: 27px 30px;
+  margin-top: 20px;
+}
+
+
+/* footer */
+.footer {
+  margin-bottom: 30px;
+}
+
+.footer__container {
+  padding: 45px;
+  border-radius: 15px;
+  background-color: #333333;
+  background-image: url('../img/footer-back.svg');
+  background-repeat: no-repeat;
+  background-position: bottom right 177px;
+}
+.footer__left {
+  width: 302px;
+  margin-right: 125px;
+}
+
+.footer__center {
+  margin-right: 269px;
+}
+
+.footer__center-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.footer__descr {
+  color: var(--white);
+  line-height: 30px;
+}
+
+.footer__left__descr {
+  margin-bottom: 37px;
+}
+
+.footer__right__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.footer__right__link {
+  display: block;
+  width: 25px;
+  height: 25px;
+  fill: var(--grey);
+  transition: fill 0.3s ease;
+}
+
+.footer__right__link:focus-visible {
+  fill: var(--light-brown);
+}
+
+.footer__right__link:hover {
+  fill: var(--light-brown);
+}
+
+.footer__right__link:active {
+  fill: var(--brown);
+}
+
+.footer__link {
+  transition: color 0.3s ease;
+  line-height: 24px;
+  color: var(--light-brown);
+}
+
+.footer__link:focus-visible {
+  outline: 1px solid var(--light-brown);
+  outline-offset: 5px;
+  color: var(--light-brown);
+}
+
+.footer__link:hover {
+  color: var(--yellow);
+}
+
+.footer__link:active {
+  color: var(--brown);
+  outline: none;
+}
